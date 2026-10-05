@@ -1,11 +1,11 @@
 const vscode = require('vscode');
 
 // The name of our themes as defined in package.json
-const ARIV_THEMES = ['Ariv Dark', 'Ariv Ocean'];
+const ARIV_THEMES = ['Ariv Better Dark', 'Ariv Better Ocean'];
 
 // The settings we want to enforce
 const ARIV_SETTINGS = {
-    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
@@ -17,7 +17,7 @@ const ARIV_SETTINGS = {
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    console.log('Ariv Themes extension is now active!');
+    console.log('Ariv Better Themes extension is now active!');
 
     // Check if the theme is already active on startup
     handleThemeChange(vscode.window.activeColorTheme, context);
@@ -64,13 +64,13 @@ async function handleThemeChange(theme, context) {
             await config.update(key, value, vscode.ConfigurationTarget.Global);
         }
 
-        // 3. Notify the user & recommend Fira Code
+        // 3. Notify the user. JetBrains Mono is SIL OFL 1.1.
         vscode.window.showInformationMessage(
-            "Ariv Theme applied! We've auto-configured your fonts and guides. For the best experience, ensure the Fira Code font is installed on your OS.", 
-            "Download Fira Code"
+            "Ariv Better Themes applied. The editor font is JetBrains Mono. Install it on your system if it is not available yet.",
+            "Get JetBrains Mono"
         ).then(selection => {
-            if (selection === "Download Fira Code") {
-                vscode.env.openExternal(vscode.Uri.parse("https://github.com/tonsky/FiraCode"));
+            if (selection === "Get JetBrains Mono") {
+                vscode.env.openExternal(vscode.Uri.parse("https://github.com/JetBrains/JetBrainsMono"));
             }
         });
 
@@ -91,7 +91,7 @@ async function handleThemeChange(theme, context) {
             await context.globalState.update('arivSettingsBackup', undefined);
 
             // Notify User
-            vscode.window.showInformationMessage("Ariv Theme removed. Your original editor settings have been restored.");
+            vscode.window.showInformationMessage("Ariv Better Themes removed. Your original editor settings have been restored.");
         }
     }
 }

@@ -1,7 +1,7 @@
 {
-  "name": "ariv-themes",
-  "displayName": "ariv-themes",
-  "description": "A free, modern dark theme alternative to Vira/Material Themes.",
+  "name": "ariv-better-themes",
+  "displayName": "Ariv Better Themes",
+  "description": "A customized dark theme based on Ariv Themes.",
   "version": "1.0.0",
   "icon": "icon.png",
   "publisher": "shubhamsharma",
@@ -11,7 +11,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ComputerKeeda/Ariv-Themes.git"
+    "url": "https://github.com/Rhaluk/ariv-better-themes.git"
   },
   "categories": [
     "Themes"
@@ -27,14 +27,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Ariv Dark",
+        "label": "Ariv Better Dark",
         "uiTheme": "vs-dark",
-        "path": "./themes/Ariv Dark-color-theme.json"
+        "path": "./themes/ariv-better-dark-color-theme.json"
       },
       {
-        "label": "Ariv Ocean",
+        "label": "Ariv Better Ocean",
         "uiTheme": "vs-dark",
-        "path": "./themes/Ariv Ocean-color-theme.json"
+        "path": "./themes/ariv-better-ocean-color-theme.json"
       }
     ]
   },
